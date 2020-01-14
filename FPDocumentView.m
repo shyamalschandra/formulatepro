@@ -762,6 +762,10 @@ static const float ZoomScaleFactor = 1.3;
     DLog(@"DocView's plageImage\n");
     NSOpenPanel *panel = [NSOpenPanel openPanel];
     [panel setAllowsMultipleSelection:NO];
+    
+    [panel beginSheet:[self window] completionHandler:nil];
+    
+    /*
     [panel beginSheetForDirectory:nil
                              file:nil
                             types:nil
@@ -769,6 +773,7 @@ static const float ZoomScaleFactor = 1.3;
                     modalDelegate:self
                    didEndSelector:@selector(openPanelDidEnd:returnCode:contextInfo:)
                       contextInfo:nil];
+     */
 }
 
 - (void)openPanelDidEnd:(NSOpenPanel *)panel
@@ -778,7 +783,7 @@ static const float ZoomScaleFactor = 1.3;
     if (NSOKButton != returnCode) return;
 
     NSImage *image = [[[NSImage alloc]
-                       initWithContentsOfFile:[panel filename]] autorelease];
+                       initWithContentsOfFile:[[ panel URL] absoluteString] ] autorelease];
 
     if (nil == image) {
         // failed to open

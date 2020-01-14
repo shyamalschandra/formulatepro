@@ -625,7 +625,11 @@ static NSString *MyDocToolbarIdentifierPreviousPage =
     
     // add option for (not) printing original PDF
     // this uses deprecated method b/c the replacement method is 10.5 only
-    [printOperation setAccessoryView:_print_accessory_view];
+    [[printOperation printPanel] addAccessoryController: (NSViewController<NSPrintPanelAccessorizing> * _Nonnull) _print_accessory_view];
+     
+     //setAccessoryView:_print_accessory_view];
+    
+    
     
     // We don't have to autorelease the print operation because
     // +[NSPrintOperation printOperationWithView:printInfo:] of course already
