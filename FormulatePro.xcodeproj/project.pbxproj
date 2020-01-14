@@ -44,7 +44,7 @@
 		C4B25AAB0B431F8800DADA0F /* FPImage.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B25AA90B431F8800DADA0F /* FPImage.m */; };
 		C4B25D980B4ADF8100DADA0F /* NSMutableDictionaryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B25D960B4ADF8100DADA0F /* NSMutableDictionaryAdditions.m */; };
 		C4C682E11089898500771440 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C682E01089898500771440 /* Sparkle.framework */; };
-		C4C682EA1089899300771440 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4C682E01089898500771440 /* Sparkle.framework */; };
+		C4C682EA1089899300771440 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = C4C682E01089898500771440 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		C4C6834D108AF0B900771440 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = C4C6834C108AF0B900771440 /* dsa_pub.pem */; };
 		C4DC0D980A82D28800DB476E /* viewmag-.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DC0D960A82D28800DB476E /* viewmag-.png */; };
 		C4DC0D990A82D28800DB476E /* viewmag+.png in Resources */ = {isa = PBXBuildFile; fileRef = C4DC0D970A82D28800DB476E /* viewmag+.png */; };
@@ -331,6 +331,9 @@
 /* Begin PBXProject section */
 		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+			};
 			buildConfigurationList = C4AB3E9F0A5AFE1100EE29B2 /* Build configuration list for PBXProject "FormulatePro" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
@@ -448,8 +451,8 @@
 		C4AB3E9C0A5AFE1100EE29B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -462,7 +465,6 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_3 = "\"$(SRCROOT)/third_party\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/third_party/Sparkle\"";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -472,7 +474,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = info.adlr.formulatepro;
 				PRODUCT_NAME = FormulatePro;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -483,8 +485,8 @@
 		C4AB3E9D0A5AFE1100EE29B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
-				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
@@ -496,7 +498,6 @@
 				FRAMEWORK_SEARCH_PATHS_QUOTED_2 = "\"$(SRCROOT)\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_3 = "\"$(SRCROOT)/third_party\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/third_party/Sparkle\"";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FormulatePro_Prefix.pch;
@@ -505,7 +506,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
-				PREBINDING = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = info.adlr.formulatepro;
 				PRODUCT_NAME = FormulatePro;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
@@ -516,14 +517,15 @@
 		C4AB3EA00A5AFE1100EE29B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = 4.0;
 				GCC_WARN_PEDANTIC = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DDEBUG";
-				PREBINDING = NO;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				WARNING_CFLAGS = "-Wmost";
 			};
@@ -532,16 +534,11 @@
 		C4AB3EA10A5AFE1100EE29B2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = 4.0;
 				GCC_WARN_PEDANTIC = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PREBINDING = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				WARNING_CFLAGS = "-Wmost";
 			};
