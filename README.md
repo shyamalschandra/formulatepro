@@ -3,4 +3,4 @@
 
 ## Modifications by Shyamal Chandra
 
-[Prelminary Release of FormulatePro for 10.6+](https://drive.google.com/drive/folders/1fm0t2SNOBg8VgH3gFFPPXEoD6ReK8lG-?usp=sharing)
+[Prelminary Release of FormulatePro for MacOS 10.6+ (zipped)](https://drive.google.com/file/d/1DKrtexWp8STkoO-Uokje_YiWGsN35uhY/view?usp=sharing)
